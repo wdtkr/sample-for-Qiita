@@ -21,7 +21,8 @@ public class SampleScript : MonoBehaviour
     }
     
     Item[] items;
-    [SerializeField] string path = "Asset/data.json";
+    string path = "/data.json";
+    
     [SerializeField] string json;
 
     public void InputJson()

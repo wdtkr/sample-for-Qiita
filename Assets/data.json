@@ -1,0 +1,18 @@
+{
+  "status": {
+    "hp": 88,
+    "power": 200
+  },
+  "items": [
+    {
+      "id": 1,
+      "name": "hoge",
+      "count": 2
+    },
+    {
+      "id": 2,
+      "name": "fuga",
+      "count": 10
+    }
+  ]
+}

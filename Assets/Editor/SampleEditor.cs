@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
+
+using UnityEditor;
 using UnityEngine;
 
-public class SampleEditor : MonoBehaviour
+[CustomEditor(typeof(SampleScript))]
+public class SampleEditor : Editor
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void OnInspectorGUI()
     {
-        
-    }
+        base.OnInspectorGUI();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (GUILayout.Button("上記の内容で更新します"))
+        {
+            var sample = target as SampleScript;
+            sample.InputJson();
+        }
     }
 }

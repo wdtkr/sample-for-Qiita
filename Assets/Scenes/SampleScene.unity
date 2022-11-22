@@ -325,11 +325,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2115042206}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3bf849a3daa4d3b8064f8618d2a103, type: 3}
+  m_Script: {fileID: 11500000, guid: 48607575fbbcb45698a9672a27c09999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: Asset/data.json
-  json: 
+  json: "{\n  \"status\": {\n    \"hp\": 88,\n    \"power\": 200\n  },\n  \"items\":
+    [\n    {\n      \"id\": 1,\n      \"name\": \"hoge\",\n      \"count\": 2\n   
+    },\n    {\n      \"id\": 2,\n      \"name\": \"fuga\",\n      \"count\": 10\n   
+    }\n  ]\n}\n"
 --- !u!4 &2115042208
 Transform:
   m_ObjectHideFlags: 0

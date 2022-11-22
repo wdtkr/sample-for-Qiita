@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using UnityEngine;
 
-public class Main : MonoBehaviour
+public class SampleScript : MonoBehaviour
 {
     [Serializable]
     public class Status

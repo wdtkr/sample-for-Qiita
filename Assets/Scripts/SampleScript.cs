@@ -10,8 +10,7 @@ public class SampleScript : MonoBehaviour
         public int hp;
         public int power;
     }
-    Status status;
-
+    
     [Serializable]
     public class Item
     {
@@ -20,14 +19,24 @@ public class SampleScript : MonoBehaviour
         public int count;
     }
     
-    Item[] items;
+    [Serializable]
+    public class Data
+    {
+        public Status status;
+        public Item[] items;
+    }
+
+    Data data = new Data();
+    
     string path = "/data.json";
     
-    [SerializeField] string json;
+    [SerializeField][Multiline] string json;
 
     public void InputJson()
     {
         StreamReader reader = new StreamReader(Application.dataPath + path);
         json = reader.ReadToEnd();
+        data = JsonUtility.FromJson<Data>(json);
+        Debug.Log(data.status.hp);
     }
 }

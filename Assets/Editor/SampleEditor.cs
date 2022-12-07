@@ -1,4 +1,3 @@
-
 using UnityEditor;
 using UnityEngine;
 
@@ -8,11 +7,16 @@ public class SampleEditor : Editor
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-
-        if (GUILayout.Button("上記の内容で更新します"))
+        var sample = target as SampleScript;
+        
+        if (GUILayout.Button("JSONを読み込む"))
         {
-            var sample = target as SampleScript;
-            sample.InputJson();
+            sample.LoadJson();
+        }
+        
+        if (GUILayout.Button("JSONを更新する"))
+        {
+            sample.UpdateJson();
         }
     }
 }

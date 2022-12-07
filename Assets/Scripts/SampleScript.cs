@@ -29,18 +29,30 @@ public class SampleScript : MonoBehaviour
     Data data = new Data();
     
     string path = "/data.json";
-    string json;
     
+    string json;
+
     [SerializeField] Status inputStatus;
     [SerializeField] Item[] inputItems;
     
+    [SerializeField][Multiline] string output;
 
-    public void InputJson()
+    public void LoadJson()
     {
-        StreamReader reader = new StreamReader(Application.dataPath + path);
-        json = reader.ReadToEnd();
+        json = File.ReadAllText(Application.dataPath + path);
         data = JsonUtility.FromJson<Data>(json);
         
+        inputStatus = data.status;
+        inputItems = data.items;
+    }
+
+    public void UpdateJson()
+    {
+        data.status = inputStatus;
+        data.items = inputItems;
+
+        output = JsonUtility.ToJson(data,true);
         
+        File.WriteAllText(Application.dataPath + path, output);
     }
 }
